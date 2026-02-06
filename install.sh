@@ -73,4 +73,5 @@ git config --global gpg.ssh.allowedsignersfile "~/.ssh/allowed_signers"
 
 echo "${GIT_USER_EMAIL} namespaces=\"git\" ${PUBLIC_SSH_KEY}" >~/.ssh/allowed_signers
 
-cp -R nvim "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+cp -fR nvim "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+cp -f lazygit/config.yml "${XDG_CONFIG_HOME:-$HOME/.config}"/lazygit/
