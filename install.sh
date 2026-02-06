@@ -3,9 +3,9 @@
 yes | sudo unminimize
 sudo apt-get install man-db
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "set +x; $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-test -d /etc/profile.d/brew.sh || echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>/etc/profile.d/brew.sh
+test -d /etc/profile.d/brew.sh || echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" | sudo tee /etc/profile.d/brew.sh
 
 brew tap hashicorp/tap
 brew install \
