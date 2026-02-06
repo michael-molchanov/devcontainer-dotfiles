@@ -71,6 +71,8 @@ git config --global push.gpgSign if-asked
 git config --global gpg.format ssh
 git config --global gpg.ssh.allowedsignersfile "~/.ssh/allowed_signers"
 
+mkdir -p "${HOME}/.ssh"
+chmod 700 "${HOME}/.ssh"
 echo "${GIT_USER_EMAIL} namespaces=\"git\" ${PUBLIC_SSH_KEY}" >~/.ssh/allowed_signers
 
 cp -fR nvim "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
