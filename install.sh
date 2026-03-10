@@ -16,6 +16,8 @@ brew install \
   ansible-creator \
   ansible-lint \
   ast-grep \
+  awscli \
+  azure-cli \
   bacon \
   bacon-ls \
   bandit \
@@ -23,6 +25,7 @@ brew install \
   bash-language-server \
   fd \
   fzf \
+  gcloud-cli \
   gitlab-ci-local \
   go \
   helm \
