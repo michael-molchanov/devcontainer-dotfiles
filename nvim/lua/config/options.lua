@@ -2,6 +2,26 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- OSC 52 clipboard.
+local is_ssh = vim.env.SSH_TTY ~= nil or vim.env.SSH_CONNECTION ~= nil
+
+-- Enable OSC 52 clipboard in remote sessions (Neovim 0.10+)
+if is_ssh and vim.fn.has("nvim-0.10") == 1 then
+  local osc52 = require("vim.ui.clipboard.osc52")
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = osc52.copy("+"),
+      ["*"] = osc52.copy("*"),
+    },
+    paste = {
+      ["+"] = osc52.paste("+"),
+      ["*"] = osc52.paste("*"),
+    },
+  }
+  vim.opt.clipboard = "unnamedplus"
+end
+
 vim.opt.colorcolumn = "120"
 vim.opt.list = true
 vim.opt.listchars = {
