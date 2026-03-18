@@ -28,13 +28,20 @@ brew install \
   gcloud-cli \
   gitlab-ci-local \
   go \
+  graphviz \
   helm \
   helmfile \
+  imagemagick \
   jq \
   k9s \
   kubectx \
   kubernetes-cli \
+  lazygit \
+  lua-language-server \
+  luarocks \
   man-db \
+  mermaid-cli \
+  neovim \
   node \
   numpy \
   openjdk \
@@ -50,6 +57,8 @@ brew install \
   rustup \
   shellcheck \
   shfmt \
+  tmux \
+  tmuxinator \
   typescript \
   uv \
   virtualenv \
@@ -71,3 +80,7 @@ git config --global gpg.ssh.allowedsignersfile "~/.ssh/allowed_signers"
 mkdir -p "${HOME}/.ssh"
 chmod 700 "${HOME}/.ssh"
 echo "${GIT_USER_EMAIL} namespaces=\"git\" ${PUBLIC_SSH_KEY}" >~/.ssh/allowed_signers
+
+cp -fR nvim "${XDG_CONFIG_HOME:-$HOME/.config}"/
+cp -fR lazygit "${XDG_CONFIG_HOME:-$HOME/.config}"/
+cp -fR tmux "${XDG_CONFIG_HOME:-$HOME/.config}"/
