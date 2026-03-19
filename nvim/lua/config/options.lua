@@ -8,6 +8,14 @@ local is_ssh = vim.env.SSH_TTY ~= nil or vim.env.SSH_CONNECTION ~= nil
 -- Enable OSC 52 clipboard in remote sessions (Neovim 0.10+)
 if is_ssh and vim.fn.has("nvim-0.10") == 1 then
   local osc52 = require("vim.ui.clipboard.osc52")
+  -- Copy-only OSC 52, paste falls back to the unnamed register
+  local function fallback_paste(_)
+    return function(_)
+      local content = vim.fn.getreg('"')
+      return vim.split(content, "\n")
+    end
+  end
+  vim.opt.clipboard = "unnamedplus"
   vim.g.clipboard = {
     name = "OSC 52",
     copy = {
@@ -15,11 +23,10 @@ if is_ssh and vim.fn.has("nvim-0.10") == 1 then
       ["*"] = osc52.copy("*"),
     },
     paste = {
-      ["+"] = osc52.paste("+"),
-      ["*"] = osc52.paste("*"),
+      ["+"] = fallback_paste("+"),
+      ["*"] = fallback_paste("*"),
     },
   }
-  vim.opt.clipboard = "unnamedplus"
 end
 
 vim.opt.colorcolumn = "120"
