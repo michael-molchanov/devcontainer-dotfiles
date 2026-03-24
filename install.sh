@@ -86,5 +86,3 @@ cp -fR lazygit "${XDG_CONFIG_HOME:-$HOME/.config}"/
 cp -fR tmux "${XDG_CONFIG_HOME:-$HOME/.config}"/
 
 nvim --headless "+Lazy! sync" +qa
-nvim --headless "+TSUpdateSync" +qa
-nvim --headless "+MasonToolsInstallSync" +qa
