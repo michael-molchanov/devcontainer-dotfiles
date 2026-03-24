@@ -84,3 +84,7 @@ echo "${GIT_USER_EMAIL} namespaces=\"git\" ${PUBLIC_SSH_KEY}" >~/.ssh/allowed_si
 cp -fR nvim "${XDG_CONFIG_HOME:-$HOME/.config}"/
 cp -fR lazygit "${XDG_CONFIG_HOME:-$HOME/.config}"/
 cp -fR tmux "${XDG_CONFIG_HOME:-$HOME/.config}"/
+
+nvim --headless "+Lazy! sync" +qa
+nvim --headless "+TSUpdateSync" +qa
+nvim --headless "+MasonToolsInstallSync" +qa
