@@ -86,5 +86,21 @@ echo "${GIT_USER_EMAIL} namespaces=\"git\" ${PUBLIC_SSH_KEY}" >~/.ssh/allowed_si
 cp -fR nvim "${XDG_CONFIG_HOME:-$HOME/.config}/"
 cp -fR lazygit "${XDG_CONFIG_HOME:-$HOME/.config}/"
 cp -fR tmux "${XDG_CONFIG_HOME:-$HOME/.config}/"
+cp -fR tmuxinator "${XDG_CONFIG_HOME:-$HOME/.config}/"
 
 git clone https://github.com/tmux-plugins/tpm "${XDG_CONFIG_HOME:-$HOME/.config}/tmux/plugins/tpm"
+
+# Add dotfiles settings to .bashrc
+if [ -f "${HOME}/.bashrc" ]; then
+  if ! grep -q "# Dotfiles part start" "${HOME}/.bashrc"; then
+    cat >>"${HOME}/.bashrc" <<'EOF'
+
+# Dotfiles part start
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+export EDITOR="nvim"
+# Dotfiles part end
+EOF
+  fi
+fi
