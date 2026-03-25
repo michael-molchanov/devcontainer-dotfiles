@@ -1,7 +1,26 @@
 # /home/vscode/.config/tmuxinator/workspace.yml
 
+<%
+  workspace_path = @settings['workspace_path'] || '/workspaces'
+
+  # Check 1: Path is properly formatted (not empty or nil)
+  raise "workspace_path cannot be empty" if workspace_path.nil? || workspace_path.empty?
+
+  # Check 2: Path exists
+  if !File.exist?(workspace_path)
+    raise "workspace_path does not exist: #{workspace_path}"
+  end
+
+  # Check 3: Path is a directory
+  if !File.directory?(workspace_path)
+    raise "workspace_path is not a directory: #{workspace_path}"
+  end
+
+  root = workspace_path
+%>
+
 name: workspace
-root: /workspaces
+root: <%= root %>
 
 # Optional tmux socket
 # socket_name: foo
@@ -45,11 +64,10 @@ root: /workspaces
 # attach: false
 
 windows:
-  <% Dir.glob('/workspaces/*').select { |f| File.directory? f }.each do |dir| %>
+  <% Dir.glob("#{root}/*").select { |f| File.directory? f }.each do |dir| %>
   - <%= File.basename(dir) %>:
       layout: main-vertical
       root: <%= dir %>
       panes:
         - nvim
   <% end %>
-
