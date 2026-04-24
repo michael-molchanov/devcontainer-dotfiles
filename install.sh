@@ -138,7 +138,7 @@ brew install \
     ansible-lint \
     checkov \
     gitlab-ci-local \
-    gitlab-ci-lint \
+    gitlab-ci-linter \
     terragrunt \
     trivy
 
