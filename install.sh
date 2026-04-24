@@ -20,9 +20,12 @@ brew install \
     markdownlint-cli2 \
     markdown-toc \
     mermaid-cli \
+    neovim \
     ripgrep \
     tmux \
     tmuxinator \
+    tree-sitter \
+    tree-sitter-cli \
     yazi
 
 # Json
@@ -52,6 +55,14 @@ brew install \
     bash-language-server \
     shellcheck \
     shfmt
+
+# Lua
+brew install \
+    lua \
+    lua-language-server \
+    luajit \
+    luarocks \
+    stylua
 
 # Java
 brew install \
