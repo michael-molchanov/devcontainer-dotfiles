@@ -99,6 +99,7 @@ brew install \
     virtualenvwrapper
 
 # Node
+brew tap oven-sh/bun
 brew install \
     bun \
     corepack \
