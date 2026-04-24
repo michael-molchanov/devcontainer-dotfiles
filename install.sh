@@ -74,9 +74,20 @@ brew install \
 
 # Go
 brew install \
+    asm-lsp \
+    asmfmt \
     delve \
+    errcheck \
     go \
-    gopls
+    goimports \
+    golangci-lint \
+    golangci-lint-langserver \
+    gomodifytags \
+    gopls \
+    gotags \
+    gotests \
+    revive \
+    staticcheck
 
 # Python
 brew install \
