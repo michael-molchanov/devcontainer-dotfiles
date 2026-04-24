@@ -111,7 +111,6 @@ brew install \
 
 # Ruby
 brew install \
-    bundler \
     ruby \
     ruby-lsp \
     rubyfmt
