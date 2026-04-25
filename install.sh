@@ -27,6 +27,7 @@ brew install \
     tree-sitter \
     tree-sitter-cli \
     yazi
+brew cleanup --prune=all
 
 # Json
 brew install \
@@ -36,6 +37,7 @@ brew install \
     jq-lsp \
     jqfmt \
     jqp
+brew cleanup --prune=all
 
 # Yaml
 brew install \
@@ -44,17 +46,20 @@ brew install \
     yamlfmt \
     yamllint \
     yq
+brew cleanup --prune=all
 
 # Docker
 brew install \
     docker-language-server \
     hadolint
+brew cleanup --prune=all
 
 # Bash
 brew install \
     bash-language-server \
     shellcheck \
     shfmt
+brew cleanup --prune=all
 
 # Lua
 brew install \
@@ -63,6 +68,7 @@ brew install \
     luajit \
     luarocks \
     stylua
+brew cleanup --prune=all
 
 # Java
 brew install \
@@ -71,6 +77,7 @@ brew install \
     maven \
     maven-completion \
     openjdk
+brew cleanup --prune=all
 
 # Go
 brew install \
@@ -88,6 +95,7 @@ brew install \
     gotests \
     revive \
     staticcheck
+brew cleanup --prune=all
 
 # Python
 brew install \
@@ -108,6 +116,7 @@ brew install \
     uv \
     virtualenv \
     virtualenvwrapper
+brew cleanup --prune=all
 
 # Node
 brew tap oven-sh/bun
@@ -119,12 +128,14 @@ brew install \
     prettier \
     typescript \
     typescript-language-server
+brew cleanup --prune=all
 
 # Ruby
 brew install \
     ruby \
     ruby-lsp \
     rubyfmt
+brew cleanup --prune=all
 gem install rubocop
 
 # Rust
@@ -134,6 +145,7 @@ brew install \
     rust \
     rust-analyzer \
     rustup
+brew cleanup --prune=all
 
 # IaC
 brew tap hashicorp/tap
@@ -152,6 +164,7 @@ brew install \
     gitlab-ci-linter \
     terragrunt \
     trivy
+brew cleanup --prune=all
 
 # Kubernetes
 brew install \
@@ -163,6 +176,7 @@ brew install \
     kubectx \
     kubernetes-cli \
     kustomize
+brew cleanup --prune=all
 
 # Cloud CLIs
 brew install \
@@ -171,6 +185,7 @@ brew install \
     gcloud-cli \
     gh \
     glab
+brew cleanup --prune=all
 
 git config --global user.name "${GIT_USER_NAME}"
 git config --global user.email "${GIT_USER_EMAIL}"
